@@ -9,10 +9,10 @@ class Calculator extends React.Component {
     //state is always a object to start
     this.state = {
       //value of property so use :
-      firstOperand: 0,
+      firstOperand: '0',
       operator: "+",
       //first operator to start +
-      secondOperand: 0,
+      secondOperand: '0',
       result: "0",
     };
     //"this" only exists for even handlers if we include lines
@@ -46,6 +46,13 @@ class Calculator extends React.Component {
     })
   }
 
+  // evaluateNumbers = () => {
+  //   if ((isNaN(this.state.firstOperand) || this.state.firstOperand === '') ||
+  //       (isNaN(this.state.secondOperand) || this.state.secondOperand === '')) {
+  //       this.setState({ warning: 'Please provide a valid number for both operands.' })
+  //       this.setState({ result: '' })
+  //   }
+  // }
   //use older non-experimental 
   calculate = () =>{
       let result = 0;
@@ -56,13 +63,13 @@ class Calculator extends React.Component {
             result = parseInt(firstOperand)+ parseInt(secondOperand);
             break;
         case '-':
-            result = parseInt(firstOperand)+ parseInt(secondOperand);
+            result = parseInt(firstOperand)- parseInt(secondOperand);
             break;
         case '*':
-            result = parseInt(firstOperand)+ parseInt(secondOperand);
+            result = parseInt(firstOperand)* parseInt(secondOperand);
             break;
         case '/':
-            result = parseInt(firstOperand)+ parseInt(secondOperand);
+            result = parseInt(firstOperand)/ parseInt(secondOperand);
             break;
       }
       this.setState({
@@ -81,6 +88,7 @@ class Calculator extends React.Component {
         <button onClick ={this.calculate}> = </button>
 
         <input value={this.state.result} type="text" disabled />
+
       </div>
     );
   }

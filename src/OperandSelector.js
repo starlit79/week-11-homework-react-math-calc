@@ -10,7 +10,7 @@ class OperandSelector extends React.Component {
   render() {
     return (
       //select is a leading tag, so no need for <span>
-      //span keeps it in one line
+      //span keeps it in one line"
       <span>
         <select onChange={this.onOperatorChange}>
           <option>+</option>
