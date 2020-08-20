@@ -1,8 +1,7 @@
 import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import './Calculator.js';
-import Calculator2 from './Calculator.js';
+import Calculator from './Calculator';
 
 
 //three inputs sections in one row, separate by drop down 4 mathematical operation
@@ -11,12 +10,13 @@ import Calculator2 from './Calculator.js';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app calculator">
+
       <header>
         React Calculator
-      </header>
+        </header>
 
-      <Calculator2/>
+       <Calculator/>
     </div>
   );
 }
