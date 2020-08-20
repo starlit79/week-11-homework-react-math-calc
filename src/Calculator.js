@@ -1,4 +1,5 @@
 import React from "react";
+import OperandSelector from './OperandSelector'
 
 class Calculator extends React.Component {
   //class is combination of function and object
@@ -39,8 +40,7 @@ class Calculator extends React.Component {
       })
   }
 
-  onOperatorChange = (event) => {
-    const operator = event.target.value;
+  onOperatorChange = (operator) => {
     this.setState({
         operator
     })
@@ -74,13 +74,8 @@ class Calculator extends React.Component {
     return (
       <div>
         <input type="number" onChange={this.onFirstOperandChange} />
-        <select onChange= {this.onOperatorChange}>
-          <option>+</option>
-          <option>-</option>
-          <option>*</option>
-          <option>/</option>
-        </select>
 
+        <OperandSelector onChange={this.onOperatorChange}/>
         <input type="number" onChange={this.onSecondOperandChange}/>
 
         <button onClick ={this.calculate}> = </button>
