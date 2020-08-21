@@ -13,7 +13,7 @@ class Calculator extends React.Component {
       operator: "+",
       //first operator to start +
       secondOperand: '0',
-      result: "0",
+      result: "",
     };
     //"this" only exists for even handlers if we include lines
     //like this for each even handler
